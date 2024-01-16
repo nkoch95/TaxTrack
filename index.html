@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Impuestos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Impuestos</h1>
+        <form>
+            <label for="ingresos">Ingresos Anuales:</label>
+            <input type="text" id="ingresos" name="ingresos" required>
+
+            <label for="categoria">Categoría de Gasto:</label>
+            <select id="categoria" name="categoria" required>
+                <option value="arrendamiento">Arrendamiento o Subarrendamiento</option>
+                <option value="hoteles">Hoteles y Restaurantes</option>
+                <option value="honorarios">Honorarios Médicos y Odontológicos</option>
+                <option value="essalud">ESSALUD Trabajadoras del Hogar</option>
+                <option value="profesion">Profesión, Arte, Ciencia, Oficio y Actividades</option>
+            </select>
+
+            <label for="gasto">Gasto Deducible:</label>
+            <input type="text" id="gasto" name="gasto" required>
+
+            <button type="button" onclick="agregarGasto()">Agregar Gasto</button>
+            <button type="button" onclick="limpiarTabla()">Limpiar Tabla</button>
+            <button type="button" onclick="calcularImpuestos()">TaxTrack</button>
+        </form>
+
+        <table id="tablaGastos">
+            <thead>
+                <tr>
+                    <th>Categoría</th>
+                    <th>Gasto</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <div id="resultadoContainer"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
